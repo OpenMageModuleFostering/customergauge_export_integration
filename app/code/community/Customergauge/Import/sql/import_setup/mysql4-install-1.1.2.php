@@ -7,6 +7,7 @@ $installer->run("CREATE TABLE IF NOT EXISTS {$this->getTable('cgmapping')} (
   `cg_field` varchar(250) NOT NULL default '',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+$installer->run("TRUNCATE TABLE {$this->getTable('cgmapping')}");
 $installer->run("
 INSERT INTO {$this->getTable('cgmapping')} VALUES (null,'Order_created_at','date_order');
 ");

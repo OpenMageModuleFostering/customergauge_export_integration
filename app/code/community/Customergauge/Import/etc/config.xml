@@ -2,7 +2,7 @@
 <config>
  <modules>
   	<Customergauge_Import>
-   		<version>1.1.1</version>
+   		<version>1.1.2</version>
 	</Customergauge_Import>
 </modules>
 <global>
