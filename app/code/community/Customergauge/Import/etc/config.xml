@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<config>
+ <modules>
+  	<Customergauge_Import>
+   		<version>1.1.1</version>
+	</Customergauge_Import>
+</modules>
+<global>
+    <models>
+        <import>
+            <class>Customergauge_Import_Model</class>
+            <resourceModel>import_mysql4</resourceModel>
+        </import>
+        <import_mysql4>
+			<class>Customergauge_Import_Model_Mysql4</class>
+			<entities>
+				<cgmapping>
+					<table>cgmapping</table>
+				</cgmapping>
+			</entities>
+		</import_mysql4>
+    </models>
+    <resources>
+		<import_setup>
+			<setup>
+				<module>Customergauge_Import</module>
+			</setup>
+			<connection>
+				<use>core_setup</use>
+			</connection>
+		</import_setup>
+		<import_write>
+			<connection>
+				<use>core_write</use>
+			</connection>
+		</import_write>
+		<import_read>
+			<connection>
+				<use>core_read</use>
+			</connection>
+		</import_read>
+    </resources>
+    <blocks>
+        <import>
+            <class>Customergauge_Import_Block</class>
+        </import>
+        <adminhtml>
+			<rewrite>
+				<sales_order_grid>Customergauge_Import_Block_Sales_Order_Grid</sales_order_grid>
+			</rewrite>
+		</adminhtml>
+    </blocks>
+    <helpers>
+        <import>
+            <class>Customergauge_Import_Helper</class>
+        </import>
+    </helpers>
+    <events>
+		<sales_order_save_commit_after>
+            <observers>
+                 <customergauge_order_success>                                        
+                    <type>singleton</type>
+					<class>import/Observer</class>
+					<method>hookToOrderSaveEvent</method>
+                 </customergauge_order_success>
+            </observers>
+        </sales_order_save_commit_after>
+    </events>
+</global>
+<admin>
+    <routers>
+        <Customergauge_Import>
+            <use>admin</use>
+            <args>
+                <module>Customergauge_Import</module>
+                <frontName>customergauge_import</frontName>
+            </args>
+        </Customergauge_Import>
+    </routers>
+</admin>
+<adminhtml>
+    <events>
+        <adminhtml_block_html_before>
+            <observers>
+                <option_in_import>
+                    <class>import/Observer</class>
+                    <method>includeOption</method>
+                </option_in_import>
+            </observers>
+        </adminhtml_block_html_before>    
+    </events>
+  	<menu>
+          <Customergauge_Import translate="title" module="import" >
+            <title>CustomerGauge</title>
+            <sort_order>110</sort_order>
+            <children>
+				<import translate="title" module="import">
+					<title>Field Mapping</title>
+					<action>Customergauge_Import/adminhtml_sync</action>
+					<sort_order>0</sort_order>
+				</import>
+				<settings translate="title" module="import">
+					<title>Settings</title>
+					<action>adminhtml/system_config/edit/section/import/</action>
+					<sort_order>1</sort_order>
+				</settings>
+			</children>
+          </Customergauge_Import>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+	   			<children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <import>
+                                        <title>CustomerGauge Import</title>
+                                    </import>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
+<default>
+    <import>
+		<config>
+			<cg_transactional>0</cg_transactional>
+			<cg_orderstatusmagento>complete</cg_orderstatusmagento>
+			<cg_prourl>https://www.cg-express.com/an/api/magento/</cg_prourl>
+			<cg_devurl>http://www.development-cg-express.com/an/api/magento/</cg_devurl>
+			<cg_activepro>0</cg_activepro>
+		</config>
+    </import>
+</default>
+</config>

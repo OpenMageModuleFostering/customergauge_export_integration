@@ -1,0 +1,49 @@
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td><h3><?php echo Mage::helper('import')->__($this->getTitle()) ?></h3></td>
+			<td class="form-buttons"><?php echo $this->getSaveButtonHtml() ?></td>
+         </tr>
+    </table>
+</div>
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="customgergauge_sync_form" enctype="multipart/form-data">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <?php if($this->requiredDataExists()): ?>
+    <?php echo $this->getChildHtml('form') ?>
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('CustomerGauge Field Mapping') ?></h4>
+        </div>
+        <fieldset id="catalog">
+            <table cellspacing="0" class="form-list">
+                <tbody>
+                	<?php 
+                		$cg_field_list = $this->getCustomergaugeField(); 
+						$cg_mapping    = $this->getCgMapping();  	
+						$magento_field = $this->getMagentoField();
+                	?>
+                    <?php foreach ( $magento_field as $key => $val ): ?>
+                    <tr>
+                        <td class="label"><label><?php echo $val ?></label></td>
+                        <td class="value">
+                        	<?php $select_cg_field = $this->CheckSlected( $cg_mapping, $key )?>
+                            <select name="<?php echo $key?>">
+                            	<option value=""> - Select CustomerGauge Field - </option>
+                            	<?php foreach( $cg_field_list as $cg_field_key => $cg_field ): 
+                            		  $select = ( $select_cg_field == $cg_field )?"selected":"";?>
+                            		<option value="<?php echo $cg_field;?>" <?php echo $select;?> ><?php echo $cg_field;?></option>
+                            	<?php endforeach; ?>
+                            </select>
+                        </td>
+                        <td><small>&nbsp;</small></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+	<?php else:
+			echo 'Please fill all required data under CustomerGauge->Settings.';
+		endif;
+	?>
+</form>

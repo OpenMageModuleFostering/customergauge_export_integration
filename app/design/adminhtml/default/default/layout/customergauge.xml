@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <import_sync>
+        <reference name="content">
+            <block type="import/sync" name="sync"></block>
+        </reference>
+    </import_sync>
+</layout>

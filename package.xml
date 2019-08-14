@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+    <name>CustomerGauge_Export_Integration</name>
+    <version>1.1.1</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/mit-license.php">MIT License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>CustomerGauge Import sends order information of the Magento to CustomeGauge Platform.</summary>
+    <description>There are two ways to send records in CustomerGauge.&#xD;
+- Automatic Sending Sales Order to CustomerGauge&#xD;
+- Manually selected Sales Order to CustomerGauge</description>
+    <notes>- Option to choose your order to send on CustomerGauge System.&#xD;
+- Save CustomerGauge and Magento field mapping.&#xD;
+- Option to filter sales order by CutomerGauge Import.&#xD;
+- API configuration options added.on CustomerGauge Setting.</notes>
+    <authors><author><name>Manas Kanti Dey</name><user>manasdey</user><email>manas.dey@directness.net</email></author></authors>
+    <date>2013-09-30</date>
+    <time>14:42:45</time>
+    <contents><target name="magecommunity"><dir name="Customergauge"><dir name="Import"><dir name="Block"><dir name="Sales"><dir name="Order"><file name="Grid.php" hash="4e5a1a585d7a768bfa0e1d78546d32c8"/><file name=".DS_Store" hash="87db6efe156de8b1eea42f5ffbd01f3b"/></dir><file name=".DS_Store" hash="70301d9923441a7b7b94ed4cb592b494"/></dir><dir name="Sync"><file name="Edit.php" hash="789cc783325888a73131cfcf4007ce6a"/><file name=".DS_Store" hash="6ae83e821e6b26d880bf2d42d95322ba"/></dir><file name=".DS_Store" hash="2ea0965836cee66e249b546d5bd66951"/></dir><dir name="Helper"><file name="Data.php" hash="46119a5f86e2adff5167c8e7e532e5f5"/><file name=".DS_Store" hash="ab8ec9291ca4885b3d88edf43f8a944e"/></dir><dir name="Model"><file name="Cgmapping.php" hash="6c4ce5d0a2973c9af4b5fd6b23583a7a"/><dir name="Mysql4"><dir name="Cgmapping"><file name="Collection.php" hash="50e1997f017e5201526646fcfd6effd2"/><file name=".DS_Store" hash="cb9b1bbc3e6cd5c1087ac49d254adece"/></dir><file name="Cgmapping.php" hash="165673aa88d329cd0d670cd6a9f42ba4"/><file name=".DS_Store" hash="7ba1aad10a0eb1cedabb68ca888bc487"/></dir><file name="Observer.php" hash="19eeffcfea1d09ba88ef391a841f26da"/><dir name="System"><dir name="Config"><file name="Orderstatus.php" hash="9cc4e949d99e189af08313c870afe3e0"/><file name="Transactional.php" hash="e5fdcdef49391ef7d900a9b0984fce83"/><file name="Upload.php" hash="6700917fda034c072ac72bcb75ed5ff2"/><file name=".DS_Store" hash="573b89d7172a6d341365e696db6ed511"/></dir><file name=".DS_Store" hash="c907efcd64a9ac3608dbc5ae1008b912"/></dir><file name=".DS_Store" hash="9b06b702f939398f9be628e58faa7669"/></dir><dir name="Service"><file name="ImportData.php" hash="2c04dd248d70e397879cb6ca61e2df96"/><file name=".DS_Store" hash="d8a424427f2383d94a95347f0e53cc2c"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="SyncController.php" hash="cc98e1b4016315b2974b77b761e9f0b5"/><file name=".DS_Store" hash="40b0f7cc5de245fbb4da03d684161e93"/></dir><file name="IndexController.php" hash="b694faa8a6df362a7c3e4368d0ee24fb"/><file name=".DS_Store" hash="0a57ea16bec19d5dab1d9760c9b410dc"/></dir><dir name="etc"><file name="config.xml" hash="3bb2ddc48ccfc7eef275db49d27aa1bb"/><file name="system.xml" hash="54a1698ece99a964ccedde2ce56f6a8c"/><file name=".DS_Store" hash="aa49a79a9cc67525aa643aa80d41968d"/></dir><dir name="sql"><dir name="import_setup"><file name="mysql4-install-1.1.1.php" hash="133088cb1457421eceff4a735732bcde"/><file name=".DS_Store" hash="2fa599641a7bb74797516ad0b510dc56"/></dir><file name=".DS_Store" hash="261362682bd38546488ad38570a85353"/></dir><file name=".DS_Store" hash="c98939c1a6ba046065333de2cb2bac49"/></dir><file name=".DS_Store" hash="d72ebececba4e083c74265c3306e774e"/></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="customergauge.xml" hash="422ab77fb74c5dd84693f64fda7af475"/></dir><dir name="template"><dir name="customergauge"><dir name="sync"><file name="edit.phtml" hash="21c1698742a90a55413ab0638aabef18"/><file name=".DS_Store" hash="918bcbc5d672135d2e7a4e6d3a59f40c"/></dir><file name=".DS_Store" hash="a768df4bd6466078b17ef8c9869ea4f5"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Customerauge_Import.xml" hash="5700ceea97ddf41d8cf0fcb3c0433659"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

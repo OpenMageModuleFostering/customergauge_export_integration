@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <Customergauge translate="label">
+            <label>CUSTOMERGAUGE IMPORT</label>
+            <sort_order>1000000</sort_order>
+        </Customergauge>
+    </tabs>
+    <sections>
+        <import translate="label">
+            <label>CustomerGauge Settings</label>
+            <tab>Customergauge</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1010</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+	            <config translate="label">
+                    <label>General Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <cg_apikey translate="label">
+                            <label>API KEY</label>
+                            <frontend_type>text</frontend_type>
+                             <comment>The API key can be found in the Admin section of CustomerGauge</comment>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cg_apikey>
+                        <cg_transactional translate="label">
+                            <label>Import Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>import/system_config_transactional</source_model>
+                            <comment>"Manual" select and send records as needed to CustomerGauge from Sales Report.<![CDATA[<br/>]]>"Automatic" post-order Sends records at end of each transaction to CustomerGauge.</comment>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cg_transactional>
+                        <cg_orderstatusmagento translate="label">
+                            <label>Order Status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>import/system_config_orderstatus</source_model>
+                            <comment></comment>
+                            <sort_order>25</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cg_orderstatusmagento>
+                        <cg_prourl translate="label">
+                            <label>Production API URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cg_prourl>
+                        <cg_devurl translate="label">
+                            <label>Development API URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </cg_devurl>
+                        <cg_activepro translate="label">
+                            <label>Active CustomerGauge System</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>import/system_config_upload</source_model>
+                            <comment>We recommend testing in the CustomerGauge development platform before you set live in Production.</comment>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cg_activepro>
+                    </fields>
+                </config>
+            </groups>
+        </import>
+    </sections>
+</config>
+
+
+
+

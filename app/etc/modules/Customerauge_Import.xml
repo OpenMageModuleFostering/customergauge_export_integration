@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Customergauge_Import>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Customergauge_Import>
+    </modules>
+</config>
