@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/CustomerGauge_Export_Integration",
+    "name": "OpenMageModuleFostering\/CustomerGauge_Export_Integration",
     "type": "magento-module",
     "license": "MIT-License",
     "homepage": "",
     "description": "CustomerGauge Import sends order information of the Magento to CustomeGauge Platform.",
     "authors": [
-    {
-        "name": "Manas Kanti Dey",
-        "email": "manas.dey@directness.net"
-    }
-],
+        {
+            "name": "Manas Kanti Dey",
+            "email": "manas.dey@directness.net"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
