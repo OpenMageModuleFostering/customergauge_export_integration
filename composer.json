@@ -1,5 +1,5 @@
 {
-    "name": "OpenMageModuleFostering\/CustomerGauge_Export_Integration",
+    "name": "openmage-module-fostering\/customergauge_export_integration",
     "type": "magento-module",
     "license": "MIT-License",
     "homepage": "",
